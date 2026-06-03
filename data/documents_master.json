@@ -1,0 +1,158 @@
+{
+  "documents": [
+    {
+      "id": "AADHAAR",
+      "name": "Aadhaar Card",
+      "description": "12-digit unique identity number issued by UIDAI",
+      "how_to_get": "Visit nearest Aadhaar Enrolment Centre or uidai.gov.in",
+      "time_to_get": "7-10 days"
+    },
+    {
+      "id": "BPL_RATION_CARD",
+      "name": "BPL Ration Card",
+      "description": "Below Poverty Line ration card issued by state government",
+      "how_to_get": "Apply at nearest Food & Civil Supplies office or tehsil",
+      "time_to_get": "15-30 days"
+    },
+    {
+      "id": "LAND_RECORDS",
+      "name": "Land ownership records (Khasra / Khatauni)",
+      "description": "Official land ownership document issued by state revenue department",
+      "how_to_get": "Visit nearest tehsil or patwari office, or check on state Bhulekh portal",
+      "time_to_get": "Same day (online) or 2-3 days (offline)"
+    },
+    {
+      "id": "BANK_PASSBOOK",
+      "name": "Bank passbook (with IFSC code)",
+      "description": "Savings account passbook showing account number and IFSC code",
+      "how_to_get": "Open account at any bank branch (use PMJDY for zero-balance account)",
+      "time_to_get": "Same day"
+    },
+    {
+      "id": "CASTE_CERTIFICATE",
+      "name": "Caste certificate",
+      "description": "Official certificate proving SC/ST/OBC category, issued by SDM or tehsil",
+      "how_to_get": "Apply at nearest tehsil or SDM office, or via state e-services portal",
+      "time_to_get": "7-15 days"
+    },
+    {
+      "id": "INCOME_CERTIFICATE",
+      "name": "Income certificate (issued by tehsil)",
+      "description": "Certificate showing annual family income, issued by Revenue Officer / SDM",
+      "how_to_get": "Apply at nearest tehsil or Jansuvidha Kendra",
+      "time_to_get": "7-15 days"
+    },
+    {
+      "id": "PASSPORT_PHOTO",
+      "name": "Passport-size photo",
+      "description": "Recent passport-size photograph",
+      "how_to_get": "Any photo studio or Aadhaar centre",
+      "time_to_get": "Same day"
+    },
+    {
+      "id": "MOBILE_AADHAAR",
+      "name": "Mobile number linked to Aadhaar",
+      "description": "Mobile number registered with Aadhaar (needed for OTP verification)",
+      "how_to_get": "Visit Aadhaar centre to link mobile, or update at uidai.gov.in",
+      "time_to_get": "Same day"
+    },
+    {
+      "id": "DISABILITY_CERTIFICATE",
+      "name": "Disability certificate (UDID card)",
+      "description": "Unique Disability ID card certifying type and percentage of disability",
+      "how_to_get": "Apply at swavlambancard.gov.in or District Disability Rehabilitation Centre",
+      "time_to_get": "15-30 days"
+    },
+    {
+      "id": "BIRTH_CERTIFICATE_CHILD",
+      "name": "Birth certificate of child",
+      "description": "Official birth certificate issued by municipal/gram panchayat authority",
+      "how_to_get": "Apply at nearest municipal office or gram panchayat",
+      "time_to_get": "3-7 days"
+    },
+    {
+      "id": "DEATH_CERTIFICATE",
+      "name": "Death certificate of husband",
+      "description": "Official death certificate issued by municipal/gram panchayat",
+      "how_to_get": "Apply at nearest municipal office or gram panchayat",
+      "time_to_get": "3-7 days"
+    },
+    {
+      "id": "ANC_CARD",
+      "name": "Antenatal Care (ANC) card from nearest PHC/ASHA worker",
+      "description": "Pregnancy registration card issued at Primary Health Centre",
+      "how_to_get": "Visit nearest ASHA worker or Primary Health Centre (PHC)",
+      "time_to_get": "Same day"
+    },
+    {
+      "id": "MCP_CARD",
+      "name": "Mother and Child Protection Card",
+      "description": "Health record card for mother and child issued at PHC",
+      "how_to_get": "Issued at Primary Health Centre during first antenatal visit",
+      "time_to_get": "Same day"
+    },
+    {
+      "id": "MARKSHEET",
+      "name": "Previous year marksheet",
+      "description": "Mark sheet / result of the previous academic year",
+      "how_to_get": "Obtained from school or college",
+      "time_to_get": "Immediately if already issued"
+    },
+    {
+      "id": "BONAFIDE_CERT",
+      "name": "Bonafide student certificate from school/college",
+      "description": "Certificate from current institution confirming student is enrolled",
+      "how_to_get": "Request from school/college office — usually issued in 1-2 days",
+      "time_to_get": "1-2 days"
+    },
+    {
+      "id": "VOTER_ID",
+      "name": "Voter ID Card",
+      "description": "Voter Identity Card issued by Election Commission of India",
+      "how_to_get": "Apply at nvsp.in or nearest ERO office",
+      "time_to_get": "15-30 days"
+    },
+    {
+      "id": "PAN_CARD",
+      "name": "PAN Card",
+      "description": "Permanent Account Number card issued by Income Tax Department",
+      "how_to_get": "Apply at incometax.gov.in or nearest NSDL/UTI centre",
+      "time_to_get": "7-15 days"
+    },
+    {
+      "id": "DPR",
+      "name": "Detailed Project Report (DPR)",
+      "description": "Business plan with cost breakdown for loan/subsidy applications",
+      "how_to_get": "Prepare yourself or with help from District Industries Centre (DIC)",
+      "time_to_get": "2-5 days to prepare"
+    },
+    {
+      "id": "AGE_PROOF",
+      "name": "Age proof",
+      "description": "Document proving age — Aadhaar, birth certificate, or school certificate",
+      "how_to_get": "Aadhaar itself serves as age proof in most cases",
+      "time_to_get": "Immediately if Aadhaar is available"
+    },
+    {
+      "id": "SELF_DECLARATION_NO_LPG",
+      "name": "Self-declaration that no LPG connection exists at home",
+      "description": "A simple written declaration that no LPG gas connection exists in the household",
+      "how_to_get": "Write on plain paper and get it signed — no official stamp needed",
+      "time_to_get": "Same day"
+    },
+    {
+      "id": "NREGA_JOB_CARD",
+      "name": "NREGA Job Card",
+      "description": "Job card issued under MGNREGA scheme by Gram Panchayat",
+      "how_to_get": "Apply at nearest Gram Panchayat office",
+      "time_to_get": "15 days"
+    },
+    {
+      "id": "RESIDENCE_PROOF",
+      "name": "Proof of rural residence (Ration Card or Voter ID)",
+      "description": "Document proving residence in a rural area",
+      "how_to_get": "Ration card or Voter ID with village address",
+      "time_to_get": "Immediately if already available"
+    }
+  ]
+}

@@ -1,0 +1,84 @@
+{
+  "categories": [
+    {
+      "id": "agriculture",
+      "label": "Agriculture & Farming",
+      "label_hi": "कृषि और खेती",
+      "emoji": "🌾",
+      "description": "Schemes for farmers, crop support, irrigation, and soil health",
+      "description_hi": "किसानों के लिए योजनाएं — फसल बीमा, सिंचाई, मिट्टी परीक्षण"
+    },
+    {
+      "id": "health",
+      "label": "Health & Medical",
+      "label_hi": "स्वास्थ्य और चिकित्सा",
+      "emoji": "🏥",
+      "description": "Health insurance, free hospital treatment, maternity, and wellness",
+      "description_hi": "स्वास्थ्य बीमा, मुफ्त इलाज, मातृत्व सेवाएं"
+    },
+    {
+      "id": "education",
+      "label": "Education & Scholarships",
+      "label_hi": "शिक्षा और छात्रवृत्ति",
+      "emoji": "🎓",
+      "description": "Scholarships for all levels from school to postgraduate",
+      "description_hi": "स्कूल से पोस्टग्रेजुएशन तक छात्रवृत्ति योजनाएं"
+    },
+    {
+      "id": "housing",
+      "label": "Housing",
+      "label_hi": "आवास",
+      "emoji": "🏠",
+      "description": "Schemes for building or buying a permanent house",
+      "description_hi": "पक्का मकान बनाने या खरीदने की योजनाएं"
+    },
+    {
+      "id": "women_child",
+      "label": "Women & Children",
+      "label_hi": "महिला और बाल",
+      "emoji": "👩‍👧",
+      "description": "Welfare schemes for women, girl children, and mothers",
+      "description_hi": "महिलाओं, बच्चों और माताओं के लिए कल्याण योजनाएं"
+    },
+    {
+      "id": "elderly",
+      "label": "Elderly & Pensions",
+      "label_hi": "वृद्ध और पेंशन",
+      "emoji": "👴",
+      "description": "Monthly pensions and support for senior citizens and widows",
+      "description_hi": "वृद्धों और विधवाओं के लिए मासिक पेंशन"
+    },
+    {
+      "id": "disability",
+      "label": "Disability Support",
+      "label_hi": "विकलांगता सहायता",
+      "emoji": "♿",
+      "description": "Pension, aids, and support for persons with disabilities",
+      "description_hi": "विकलांग व्यक्तियों के लिए पेंशन और सहायता"
+    },
+    {
+      "id": "employment",
+      "label": "Employment & Skill Training",
+      "label_hi": "रोजगार और कौशल प्रशिक्षण",
+      "emoji": "💼",
+      "description": "Work guarantee, skill development, and vocational training",
+      "description_hi": "काम की गारंटी, स्किल ट्रेनिंग और रोजगार योजनाएं"
+    },
+    {
+      "id": "financial_inclusion",
+      "label": "Financial Inclusion & Insurance",
+      "label_hi": "वित्तीय समावेश और बीमा",
+      "emoji": "🏦",
+      "description": "Bank accounts, life insurance, accident insurance, and pension",
+      "description_hi": "बैंक खाता, जीवन बीमा, दुर्घटना बीमा और पेंशन"
+    },
+    {
+      "id": "entrepreneur",
+      "label": "Entrepreneurship & Business",
+      "label_hi": "उद्यमिता और व्यवसाय",
+      "emoji": "🔧",
+      "description": "Loans, subsidies, and support for starting or growing a business",
+      "description_hi": "व्यवसाय शुरू करने या बढ़ाने के लिए ऋण और सब्सिडी"
+    }
+  ]
+}
