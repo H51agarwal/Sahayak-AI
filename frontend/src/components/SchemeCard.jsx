@@ -1,3 +1,7 @@
+import { useState } from "react"
+import CSCLocator from "./CSCLocator"
+import VoiceGuide from "./VoiceGuide"
+
 const CATEGORY_COLORS = {
   agriculture: "bg-green-50 text-green-700 border-green-200",
   health: "bg-red-50 text-red-700 border-red-200",
@@ -18,10 +22,61 @@ const CATEGORY_EMOJI = {
   entrepreneur: "🔧", disability: "♿",
 }
 
+const getImpactLine = (schemeId, language) => {
+  const lines = {
+    "PM_KISAN": {
+      en: "💰 ₹2,000 deposited in your bank — 3 times a year. No office visit needed.",
+      hi: "💰 साल में 3 बार ₹2,000 सीधे बैंक में। कोई दफ्तर जाने की जरूरत नहीं।"
+    },
+    "AYUSHMAN_BHARAT": {
+      en: "🏥 Your entire family is covered for ₹5 lakh in hospital bills — completely free.",
+      hi: "🏥 पूरे परिवार का ₹5 लाख तक का इलाज मुफ्त। एक भी पैसा नहीं लगेगा।"
+    },
+    "UJJWALA": {
+      en: "🔥 Free LPG connection — saves you approximately ₹1,800/year vs firewood.",
+      hi: "🔥 मुफ्त गैस कनेक्शन — लकड़ी की तुलना में सालाना ₹1,800 की बचत।"
+    },
+    "MGNREGA": {
+      en: "👷 100 days of guaranteed work = ₹22,100+ directly in your bank this year.",
+      hi: "👷 100 दिन काम की गारंटी = इस साल ₹22,100+ सीधे बैंक में।"
+    },
+    "PM_AWAS_GRAMIN": {
+      en: "🏠 ₹1.2 lakh grant to build your permanent home — paid in instalments.",
+      hi: "🏠 पक्का घर बनाने के लिए ₹1.2 लाख की सहायता — किश्तों में मिलती है।"
+    },
+    "PMJJBY": {
+      en: "🛡️ Just ₹436/year gives your family ₹2 lakh if something happens to you.",
+      hi: "🛡️ सिर्फ ₹436/साल में परिवार को ₹2 लाख की सुरक्षा।"
+    },
+    "PMSBY": {
+      en: "⚡ ₹20/year — the cheapest accident insurance in India. ₹2 lakh coverage.",
+      hi: "⚡ मात्र ₹20/साल — ₹2 लाख का दुर्घटना बीमा। भारत का सबसे सस्ता बीमा।"
+    },
+    "PM_MUDRA": {
+      en: "🏪 Loan up to ₹10 lakh with zero collateral to start or grow your business.",
+      hi: "🏪 बिना किसी जमानत के ₹10 लाख तक का लोन। व्यवसाय शुरू करें।"
+    },
+    "NSP_SCHOLARSHIP": {
+      en: "🎓 Scholarship money goes directly to your bank — no middleman, no delay.",
+      hi: "🎓 छात्रवृत्ति सीधे बैंक में — कोई बिचौलिया नहीं, कोई देरी नहीं।"
+    },
+    "SUKANYA_SAMRIDDHI": {
+      en: "👧 ₹1,000/month saved now = ₹5+ lakh for your daughter at age 21. Tax free.",
+      hi: "👧 अभी ₹1,000/माह बचाएं = बेटी के 21 साल पर ₹5+ लाख। टैक्स फ्री।"
+    },
+  }
+
+  const line = lines[schemeId]
+  if (!line) return null
+  return language === "hi" ? line.hi : line.en
+}
+
 export default function SchemeCard({ scheme, language }) {
   const colorClass = CATEGORY_COLORS[scheme.category] || "bg-gray-50 text-gray-700 border-gray-200"
   const emoji = CATEGORY_EMOJI[scheme.category] || "📋"
   const hasMissingDocs = scheme.documents_missing?.length > 0
+  const [showCSC, setShowCSC] = useState(false)
+  const [showGuide, setShowGuide] = useState(false)
 
   return (
     <div className="bg-white rounded-2xl border border-gray-200 p-4 shadow-sm mb-3">
@@ -45,6 +100,14 @@ export default function SchemeCard({ scheme, language }) {
       <p className="text-sm text-gray-700 mb-3 leading-relaxed">
         {language === "hi" ? scheme.benefit_summary_hi : scheme.benefit_summary}
       </p>
+
+      {getImpactLine(scheme.id, language) && (
+        <div className="bg-saffron-light border border-orange-200 rounded-xl px-3 py-2 mb-3">
+          <p className="text-xs text-orange-800 font-medium leading-relaxed">
+            {getImpactLine(scheme.id, language)}
+          </p>
+        </div>
+      )}
 
       {hasMissingDocs ? (
         <div className="bg-orange-50 border border-orange-200 rounded-xl p-3 mb-3">
@@ -74,6 +137,38 @@ export default function SchemeCard({ scheme, language }) {
         {language === "en" ? "Apply Now →" : "अभी आवेदन करें →"}
       </a>
 
+      <button
+        onClick={() => setShowGuide(true)}
+        className="w-full py-2.5 bg-blue-700 text-white rounded-xl text-sm font-medium hover:bg-blue-800 transition-colors mb-2"
+      >
+        🤝 {language === "en"
+          ? "Voice Helper - How to apply step by step"
+          : "आवाज़ सहायक — पूरी जानकारी सुनें"}
+      </button>
+
+      <button
+        onClick={() => setShowCSC(true)}
+        className="w-full py-2.5 border border-gray-300 text-gray-600 rounded-xl text-sm hover:border-saffron hover:text-saffron transition-colors"
+      >
+       📍 {language === "en"
+          ? "Can't apply online? Find nearest help centre"
+          : "ऑनलाइन नहीं कर सकते? नजदीकी सहायता केंद्र खोजें"}
+      </button>
+
+      {showCSC && (
+        <CSCLocator
+          scheme={scheme}
+          language={language}
+          onClose={() => setShowCSC(false)}
+        />
+      )}
+      {showGuide && (
+        <VoiceGuide
+          scheme={scheme}
+          language={language}
+          onClose={() => setShowGuide(false)}
+        />
+      )}
     </div>
   )
 }

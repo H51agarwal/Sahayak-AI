@@ -24,7 +24,6 @@ export default function App() {
   }
 
 
-  // Called by ChatWindow when conversation is complete
   const handleResults = (matchResult) => {
     setResults(matchResult)
     setScreen("results")

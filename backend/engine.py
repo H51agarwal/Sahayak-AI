@@ -39,11 +39,11 @@ def is_eligible(scheme: dict, user: UserProfile) -> bool:
         if user.gender != e["gender"]:
             return False
         
-    if "all" not in e["caste"]:
+    if e["caste"] and "all" not in e["caste"]:
         if user.caste not in e["caste"]:
             return False
         
-    if "all" not in e["occupation"]:
+    if e["occupation"] and "all" not in e["occupation"]:
         user_occ_set = set(user.occupation)
         scheme_occ_set = set(e["occupation"])
         if not user_occ_set.intersection(scheme_occ_set):

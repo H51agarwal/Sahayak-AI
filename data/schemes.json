@@ -33,7 +33,7 @@
                 ]
             },
             "documents_required" : [
-                "Aadhaar card",
+                "Aadhar card",
                 "Land ownership records (Khasra/ Khatauni)",
                 "Bank passbook (with IFSC code)",
                 "Mobile number linked to Aadhaar"
@@ -121,7 +121,7 @@
             ]
         },
         "documents_required": [
-            "Aadhaar Card",
+            "Aadhar card",
             "BPL Ration Card",
             "Bank account details",
             "Passport-size photo",
@@ -194,7 +194,7 @@
                 "max_age" : null,
                 "gender" : "any",
                 "caste" : ["all"],
-                "occupation" : null,
+                "occupation" : ["all"],
                 "max_annual_income_inr" : 0,
                 "bpl_required" : true,
                 "state_specific" : true,
@@ -215,7 +215,7 @@
                 "Attested photocopy of Sikkim Subject Certificate / Certificate of Identification, Income Certificate, Caste Certificate",
                 "Attested photocopy of the Below Poverty Line Certificate",
                 "Birth Certificate or Electoral Photo Identity Card or any other valid document having recorded the date as proof of age",
-                "Attested photocopy of Aadhar card",
+                "Aadhar card",
                 "Attested photocopy of first page of the Bank/Post Office Passbook along with the photocopy of the latest updated account"
             ],
             "how_to_apply" : {
@@ -359,7 +359,7 @@
             },
             "documents_required" : [
                 "Consent-cum-Declaration Form",
-                "Aadhar card (Linked to bank account)",
+                "Aadhar card",
                 "Savings bank account details"
             ],
             "how_to_apply" : {
@@ -414,7 +414,7 @@
                 ]
             },
             "documents_required" : [
-                "Aadhar card (Linked to bank account)",
+                "Aadhar card",
                 "Savings bank account details",
                 "PMSBY enrolment/consent form (available at bank or via net banking)"
             ],
@@ -480,7 +480,7 @@
                 ]
             },
             "documents_required" : [
-                "Aadhaar Card",
+                "Aadhar acrd",
                 "Aadhaar linked bank or post office account details",
                 "Eligibility proof",
                 "MCP/RCHI Card",
@@ -549,7 +549,7 @@
                 ]
             },
             "documents_required" : [
-                "Aadhaar Card",
+                "Aadhar card",
                 "Bank passbook (with IFSC code, account in student's name)",
                 "Mobile number linked to Aadhaar",
                 "Previous year marksheet",
@@ -605,7 +605,7 @@
                 ]
             },
             "documents_required" : [
-                "Aadhaar Card",
+                "Aadhar card",
                 "Caste certificate (SC or ST)",
                 "Income certificate (family income, issued by tehsil)",
                 "Previous year marksheet",
@@ -657,7 +657,7 @@
             },
             "documents_required" : [
                 "Birth certificate of the girl child",
-                "Aadhaar Card of parent/guardian",
+                "Aadhar card of parent/guardian",
                 "Passport-size photo of parent/guardian",
                 "Address proof of parent/guardian"
             ],
@@ -708,7 +708,7 @@
                 ]
             },
             "documents_required" : [
-                "Aadhaar Card",
+                "Aadhar card",
                 "PAN Card",
                 "Passport-size photo",
                 "Bank statements (last 6 months)",
@@ -769,7 +769,7 @@
                 "Certificate of Vending",
                 "Identity Card",
                 "Letter of Recommendation",
-                "Aadhaar Card",
+                "Aadhar card",
                 "Voter ID Card",
                 "Driving License",
                 "MNREGA Card",
@@ -829,7 +829,7 @@
                 ]
             },
             "documents_required" : [
-                "Aadhaar Card",
+                "Aadhar card",
                 "Bank Account Details",
                 "Address Proof",
                 "Passport Size Photograph",
@@ -876,7 +876,7 @@
                 "states" : [],
                 "other_conditions" : [
                     "Applicant must be an Indian citizen",
-                    "Must possess Aadhaar Card",
+                    "Must possess Aadhar card",
                     "Must have Aadhaar linked bank account",
                     "Must fulfil eligibility criteria for the selected job role",
                     "Minimum 70% attendance is required for assessment eligibility"
@@ -884,14 +884,13 @@
                 "exclusions" : [
                     "People below 15 years of age",
                     "People above 45 years of age",
-                    "Applicants without Aadhaar Card",
+                    "Applicants without Aadhar card",
                     "Applicants without Aadhaar linked bank account",
                     "Candidates with less than 70% attendance are not eligible for assessment"
                 ]
             },
             "documents_required" : [
-                "Aadhaar Card",
-                "Aadhaar linked bank account details",
+                "Aadhar card",
                 "Documents required for the selected job role"
             ],
             "how_to_apply" : {
@@ -1002,7 +1001,7 @@
                 ]
             },
             "documents_required" : [
-                "Aadhaar Card",
+                "Aadhar card",
                 "Caste certificate (SC or ST)",
                 "Income certificate (issued by tehsil)",
                 "Previous year marksheet",
@@ -1218,7 +1217,7 @@
                 "exclusions": []
             },
             "documents_required": [
-                "Aadhaar Card",
+                "Aadhar card",
                 "Land Documents including Khasra Khatauni",
                 "Bank Account Passbook",
                 "Declaration Form",
@@ -1328,7 +1327,7 @@
                 "exclusions": ["Farmers with land holding exceeding 2 hectares are not eligible"]
             },
             "documents_required": [
-                "Aadhaar Card",
+                "Aadhar card",
                 "Land documents",
                 "Caste Certificate (for SC/ST/OBC applicants)",
                 "Mobile number details",
@@ -1443,7 +1442,7 @@
             },
             "documents_required": [
                 "BPL Ration Card",
-                "Aadhaar Card",
+                "Aadhar card",
                 "Passport-size photos of all family members",
                 "Bank passbook (with IFSC code)"
             ],
@@ -1486,7 +1485,7 @@
                 ]
             },
             "documents_required": [
-                "Aadhaar Card",
+                "Aadhar card",
                 "Antenatal Care (ANC) card from nearest PHC/ASHA worker",
                 "Mother and Child Protection Card (issued at PHC)"
             ],
@@ -1530,7 +1529,7 @@
             },
             "documents_required": [
                 "Mother and Child Protection Card",
-                "Aadhaar Card or Government ID",
+                "Aadhar card or Government ID",
                 "Previous medical records",
                 "Address proof",
                 "Mobile number"
@@ -1587,7 +1586,7 @@
                 ]
             },
             "documents_required": [
-                "Aadhaar Card",
+                "Aadhar card",
                 "Service certificate of parent (from commanding officer)",
                 "Certificate of ex-serviceman or death/disability certificate (if applicable)",
                 "Previous year marksheet (minimum 60%)",
@@ -1637,7 +1636,7 @@
                 ]
             },
             "documents_required": [
-                "Aadhaar Card",
+                "Aadhar card",
                 "Income Certificate",
                 "Previous Year Marksheet",
                 "School Verification Form",
@@ -1705,7 +1704,7 @@
                 ]
             },
             "documents_required": [
-                "Aadhaar Card",
+                "Aadhar card",
                 "Class 12 marksheet",
                 "Income certificate of parent/guardian (below ₹8 lakh, issued by SDM/tehsil)",
                 "Bonafide student certificate from college/university",
@@ -1755,7 +1754,7 @@
                 ]
             },
             "documents_required": [
-                "Aadhaar Card",
+                "Aadhar card",
                 "Domicile Certificate",
                 "Income Certificate",
                 "Class 12 Marksheet",
@@ -1823,7 +1822,7 @@
                 ]
             },
             "documents_required": [
-                "Aadhaar Card",
+                "Aadhar card",
                 "OBC/EBC/DNT caste certificate (issued by competent authority)",
                 "Income certificate (below ₹2.5 lakh, issued by tehsil)",
                 "Previous year marksheet",
@@ -1873,7 +1872,7 @@
                 ]
             },
             "documents_required": [
-                "Aadhaar Card or Aadhaar Enrolment ID",
+                "Aadhar card or Aadhaar Enrolment ID",
                 "Income Certificate or Self Affidavit",
                 "PAN Card",
                 "Voter ID",
@@ -1956,7 +1955,7 @@
         ]
       },
       "documents_required": [
-        "Aadhaar Card",
+        "Aadhar card",
         "Proof of slum residence (Voter ID with slum address, or ration card)",
         "Income certificate",
         "Self-declaration of not owning a pucca house",
@@ -2017,7 +2016,7 @@
                     "Applicants already availing central housing assistance"
                 ]
             },
-            "documents_required": [ "Aadhaar Card", "Income Proof", "Bank Account Details", "Property Documents", "Loan Documents", "Identity Proof", "Address Proof"],
+            "documents_required": [ "Aadhar card", "Income Proof", "Bank Account Details", "Property Documents", "Loan Documents", "Identity Proof", "Address Proof"],
             "how_to_apply": {
                 "offline": [
                     "Visit a participating bank or housing finance institution",
@@ -2074,7 +2073,7 @@
       },
       "documents_required": [
         "Birth certificate of the girl child",
-        "Aadhaar Card of parent",
+        "Aadhar card",
         "Proof of address"
       ],
       "how_to_apply": {
@@ -2131,7 +2130,7 @@
       },
       "documents_required": [
         "No documents required in emergency — walk in directly",
-        "Aadhaar Card (helpful but not mandatory at initial contact)"
+        "Aadhar card"
       ],
       "how_to_apply": {
         "online": "Call Women Helpline: 181 (national number, 24/7)",
@@ -2190,7 +2189,7 @@
       },
       "documents_required": [
         "No strict documents required — walk-in access",
-        "Aadhaar Card (for enrolment in specific training programmes)"
+        "Aadhar card"
       ],
       "how_to_apply": {
         "online": "Contact nearest District Women and Child Development Office",
@@ -2240,7 +2239,7 @@
                 ],
                 "exclusions": ["Children above 6 years (school nutrition covered by PM Poshan/mid-day meal scheme)"]
             },
-            "documents_required": ["Aadhaar Card", "MCP Card"],
+            "documents_required": ["Aadhar card", "MCP Card"],
             "how_to_apply": {
                 "offline": [
                     "Visit the nearest Anganwadi Centre or Social Welfare Department office",
@@ -2281,12 +2280,8 @@
         "min_age": 40,
         "max_age": null,
         "gender": "female",
-        "caste": [
-          "all"
-        ],
-        "occupation": [
-          "all"
-        ],
+        "caste": ["all"],
+        "occupation": ["all"],
         "max_annual_income_inr": null,
         "bpl_required": true,
         "state_specific": false,
@@ -2303,7 +2298,7 @@
         ]
       },
       "documents_required": [
-        "Aadhaar Card",
+        "Aadhar card",
         "BPL Ration Card",
         "Death certificate of husband",
         "Age proof (birth certificate, school certificate, or Aadhaar)",
@@ -2344,12 +2339,8 @@
         "min_age": 18,
         "max_age": null,
         "gender": "any",
-        "caste": [
-          "all"
-        ],
-        "occupation": [
-          "all"
-        ],
+        "caste": ["all"],
+        "occupation": ["all"],
         "max_annual_income_inr": null,
         "bpl_required": true,
         "state_specific": false,
@@ -2367,7 +2358,7 @@
         ]
       },
       "documents_required": [
-        "Aadhaar Card",
+        "Aadhar card",
         "BPL Ration Card",
         "Disability certificate (80%+ disability, issued by government medical board)",
         "UDID card (Unique Disability ID — apply at swavlambancard.gov.in)",
@@ -2415,9 +2406,7 @@
         "caste": [
           "all"
         ],
-        "occupation": [
-          "all"
-        ],
+        "occupation": ["all"],
         "max_annual_income_inr": null,
         "bpl_required": true,
         "state_specific": false,
@@ -2436,7 +2425,7 @@
         ]
       },
       "documents_required": [
-        "Aadhaar Card of deceased and applicant",
+        "Aadhar card",
         "BPL Ration Card",
         "Death certificate of breadwinner (issued by municipal or gram panchayat)",
         "Age proof of deceased",
@@ -2567,11 +2556,10 @@
                 "exclusions": ["Government employees and their family members"]
             },
             "documents_required": [
-                "Aadhaar Card",
+                "Aadhar card",
                 "Mobile Number",
                 "Bank Account Details",
-                "Ration Card",
-                "Aadhaar Cards of Family Members (if ration card unavailable)"
+                "Ration Card"
             ],
             "how_to_apply": {
                 "online": [
@@ -2700,7 +2688,7 @@
                 "exclusions": ["Candidates who do not complete internship satisfactorily will not receive stipend or certificate"]
             },
             "documents_required": [
-                "Aadhaar card",
+                "Aadhar card",
                 "Identity proof",
                 "Address proof",
                 "Age proof",
@@ -2766,7 +2754,7 @@
                 ]
             },
             "documents_required": [
-                "Aadhaar Card",
+                "Aadhar card",
                 "PAN Card",
                 "Educational certificates (Class 8 pass certificate if project above threshold)",
                 "Caste certificate (SC/ST/OBC — for higher subsidy)",

@@ -11,6 +11,7 @@ export default function ChatWindow({ language, onComplete }) {
   const [loading, setLoading] = useState(false)
   const [progress, setProgress] = useState("0/10")
   const messagesEndRef = useRef(null)
+  const [showRetry, setShowRetry] = useState(false)
 
   useEffect(() => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" })
@@ -18,12 +19,16 @@ export default function ChatWindow({ language, onComplete }) {
 
   useEffect(() => {
     initConversation()
-  }, [])
+  }, [language])
 
   const initConversation = async () => {
     setMessages([])
+    setCurrentQ(null)
+    setSessionId(null)
+    setProgress("0/10")
     setLoading(true)
     try {
+      const chatLang = ["en", "hi"].includes(language) ? language : "hi"
       const data = await startConversation(language)
       setSessionId(data.session_id)
       setCurrentQ(data)
@@ -35,9 +40,13 @@ export default function ChatWindow({ language, onComplete }) {
       addBotMessage(data.question)
       setProgress(data.progress || "1/10")
     } catch (e) {
-      addBotMessage("⚠️ Could not connect to server. Make sure your backend is running.")
+      addBotMessage(
+        "⚠️ Could not connect to server. Make sure your backend is running." +
+        "If you are viewing the deployed version, the server may be starting up - please wait 30 seconds and refresh"
+      )
+      setShowRetry(true)
+      setLoading(false)
     }
-    setLoading(false)
   }
 
   const addBotMessage = (text) => {
@@ -48,11 +57,26 @@ export default function ChatWindow({ language, onComplete }) {
     setMessages(prev => [...prev, { text, isBot: false, id: Date.now() + Math.random() }])
   }
 
-   const handleQuickReply = async (selectedOptions) => {
+  const filterOptions = (questionID, options, answers) => {
+    if (questionID === "documents"){
+      const age = answers?.age || ""
+      const isUnder18 = age.toLowerCase().includes("Under 18") ||
+                        age.toLowerCase().includes("18 से कम")
+      if (isUnder18) {
+        return options.filter(opt =>
+          !opt.toLowerCase().includes("voter id")
+        )
+    }
+  }
+  return options
+}
+
+
+  const handleQuickReply = async (selectedOptions) => {
     const displayText = selectedOptions.join(", ")
     const answerValue = selectedOptions.length === 1 ? selectedOptions[0] : selectedOptions
     addUserMessage(displayText)
-    setCurrentQ(null)   // hide options while loading
+    setCurrentQ(null)   
     setLoading(true)
     try {
       const data = await submitAnswer(sessionId, currentQ.question_id, answerValue)
@@ -69,7 +93,6 @@ export default function ChatWindow({ language, onComplete }) {
   setInput("")
   addUserMessage(text)
   
-  // Save currentQ before clearing it
   const activeQuestion = currentQ
   setCurrentQ(null)
   setLoading(true)
@@ -83,7 +106,6 @@ export default function ChatWindow({ language, onComplete }) {
   setLoading(false)
 }
 
-  
   const handleResponse = (data) => {
     if (data.status === "complete") {
       addBotMessage(
@@ -106,7 +128,6 @@ export default function ChatWindow({ language, onComplete }) {
     if (data.progress) setProgress(data.progress)
   }
 
-  // Progress bar percentage
   const [done, total] = progress.split("/").map(Number)
   const pct = total ? Math.round((done / total) * 100) : 0
 
@@ -144,6 +165,17 @@ export default function ChatWindow({ language, onComplete }) {
         <div ref={messagesEndRef} />
       </div>
 
+      {showRetry && (
+        <div className="px-4 pb-3">
+          <button
+            onClick={() => { setShowRetry(false); initConversation(); }}
+            className="w-full py-2.5 bg-saffron text-white rounded-xl text-sm font-medium"
+          >
+          🔄 {language === "en" ? "Retry Connection" : "दोबारा कोशिश करें"}
+          </button>
+        </div>
+      )}
+
       {currentQ?.options && !loading && (
         <div className="px-4 pb-2">
           <QuickReplies
@@ -172,8 +204,8 @@ export default function ChatWindow({ language, onComplete }) {
             ➤
           </button>
         </div>
-
         </div>
+
     </div>
   )
 }

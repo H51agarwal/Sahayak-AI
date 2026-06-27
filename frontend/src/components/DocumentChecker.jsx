@@ -1,5 +1,49 @@
 import { useState, useMemo } from "react"
 
+const normaliseDoc = (doc) => {
+  const d = doc.toLowerCase().trim()
+  if (d.includes("aadhaar") || d.includes("aadhar")) return "Aadhaar Card"
+  if (d.includes("ration card") || d.includes("bpl card")) return "BPL Ration Card"
+  if (d.includes("bank passbook") || d.includes("bank account details") || 
+      d.includes("savings bank account") || d.includes("bank statement") ||
+      d.includes("bank statements")) return "Bank passbook (with IFSC code)"
+  if (d.includes("income certificate") || d.includes("income proof") || 
+      d.includes("income certificate or self affidavit") ||
+      d.includes("income tax return")) return "Income certificate"
+  if (d.includes("caste certificate")) return "Caste certificate"
+  if (d.includes("voter id") || d.includes("voter id card")) return "Voter ID Card"
+  if (d.includes("pan card") || d.includes("pan")) return "PAN Card"
+  if (d.includes("passport") && d.includes("photo")) return "Passport-size photo"
+  if (d.includes("mobile")) return "Mobile number linked to Aadhaar"
+  if (d.includes("land") || d.includes("khasra") || 
+      d.includes("property documents") || d.includes("property valuation")) return "Land ownership records (Khasra / Khatauni)"
+  if (d.includes("disability") || d.includes("udid")) return "Disability certificate (UDID card)"
+  if (d.includes("birth certificate")) return "Birth certificate of child"
+  if (d.includes("death certificate")) return "Death certificate of husband"
+  if (d.includes("address proof") || d.includes("address proof of parent") ||
+      d.includes("proof of address")) return "Address proof"
+  if (d.includes("age proof") || d.includes("age proof of deceased")) return "Age proof"
+  if (d.includes("driving license")) return "Voter ID Card"
+  if (d.includes("passport") && !d.includes("photo")) return "Address proof"
+  if (d.includes("salary slip")) return "Income certificate"
+  if (d.includes("consent") || d.includes("declaration form")) return "Self-declaration form"
+  if (d.includes("self-declaration") || d.includes("self declaration") ||
+      d.includes("affidavit")) return "Self-declaration form"
+  if (d.includes("bonafide") || d.includes("bona fide")) return "Bonafide student certificate"
+  if (d.includes("marksheet") || d.includes("mark sheet")) return "Previous year marksheet"
+  if (d.includes("antenatal") || d.includes("anc card") || d.includes("anc ")) return "Antenatal Care (ANC) card"
+  if (d.includes("business") && d.includes("address")) return "Business address proof"
+  if (d.includes("business plan") || d.includes("project report") || 
+      d.includes("dpr") || d.includes("quotation")) return "Business plan / DPR"
+  if (d.includes("loan document")) return "Bank passbook (with IFSC code)"
+  if (d.includes("identity proof") || d.includes("identity proof")) return "Aadhaar Card"
+  if (d.includes("nationality") || d.includes("domicile")) return "Address proof"
+  if (d.includes("ews") || d.includes("lig") || d.includes("mig")) return "Income certificate"
+  if (d.includes("service certificate") || d.includes("discharge certificate")) return "Service certificate (CAPF/RPF)"
+  if (d.includes("school") || d.includes("college") || d.includes("institution")) return "Bonafide student certificate"
+  return doc
+}
+
 const DOC_INFO = {
   "Aadhaar Card": { where: "Nearest Aadhaar Enrolment Centre or uidai.gov.in", days: "7–10 days" },
   "BPL Ration Card": { where: "Food & Civil Supplies office or tehsil", days: "15–30 days" },
@@ -21,9 +65,9 @@ export default function DocumentChecker({ language, combinedResult, onBack }) {
   const allDocs = useMemo(() => {
     const docSet = new Set()
     combinedResult.schemes.forEach(s => {
-      s.documents_required.forEach(d => docSet.add(d))
+      s.documents_required.forEach(d => docSet.add(normaliseDoc(d)))
     })
-    return [...docSet]
+    return [...docSet].sort()
   }, [combinedResult])
 
   const [checked, setChecked] = useState(new Set())

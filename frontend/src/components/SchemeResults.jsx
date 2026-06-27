@@ -3,6 +3,28 @@ import SchemeCard from "./SchemeCard"
 export default function SchemeResults({ results, language, onRestart, onAddMember, onCheckDocuments }) {
   if (!results) return null
 
+  if (results.total_schemes_matched === 0) {
+  return (
+    <div className="pt-4 text-center">
+      <div className="bg-orange-50 border border-orange-200 rounded-2xl p-6 mb-4">
+        <p className="text-2xl mb-2">🔍</p>
+        <p className="text-sm font-medium text-orange-800 mb-1">
+          {language === "en" ? "No schemes found for this profile" : "इस प्रोफ़ाइल के लिए कोई योजना नहीं मिली"}
+        </p>
+        <p className="text-xs text-orange-600">
+          {language === "en"
+            ? "This usually happens for government employees or high-income households."
+            : "यह आमतौर पर सरकारी कर्मचारियों या उच्च आय वाले परिवारों के लिए होता है।"}
+        </p>
+      </div>
+      <button onClick={onRestart}
+        className="w-full py-3 bg-saffron text-white rounded-2xl text-sm font-medium">
+        🔄 {language === "en" ? "Try again" : "दोबारा कोशिश करें"}
+      </button>
+    </div>
+  )
+}
+
   return (
     <div className="pt-4">
 
@@ -39,7 +61,7 @@ export default function SchemeResults({ results, language, onRestart, onAddMembe
 
         <button
           onClick={onCheckDocuments}
-          className="w-full py-3 bg-navy text-white rounded-2xl text-sm font-medium hover:bg-blue-900 transition-colors"
+          className="w-full py-3 bg-blue-800 text-white rounded-2xl text-sm font-medium hover:bg-blue-900 transition-colors"
         >
           📋 {language === "en" ? "Check Document Readiness" : "दस्तावेज़ तैयारी जांचें"}
         </button>
@@ -52,7 +74,6 @@ export default function SchemeResults({ results, language, onRestart, onAddMembe
         </button>
 
       </div>
-
     </div>
   )
 }

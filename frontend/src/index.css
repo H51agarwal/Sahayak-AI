@@ -6,3 +6,7 @@
 
 * { box-sizing: border-box; }
 body { margin: 0; background: #F8F9FA; }
+
+html{
+    scroll-behavior: smooth;
+}

@@ -116,7 +116,8 @@ QUESTIONS = {
 class ConversationState:
     answers: Dict = field(default_factory=dict)
     questions_to_skip: List[str] = field(default_factory=list)
-    language: str = "en"  # "en" or "hi"
+    language: str = "en"
+    base_lang: str= "en"
     is_complete: bool = False
 
     def get_next_question(self) -> Optional[str]:
