@@ -95,8 +95,8 @@ Return ONLY the JSON array. No explanation. No markdown backticks.
            "display_text": f"{req.application_url} खोलें",
            "sub_steps": None, "tip": "अगर वेबसाइट नहीं खुली तो internet connection जांचें"},
           {"title": "पंजीकरण करें",
-           "voice_script": "शाबाश! अब आपको 'New Registration' या 'नया पंजीकरण' लिखा हुआ बटन दिखेगा। उस पर click करें। आधार नंबर और मोबाइल नंबर मांगा जाएगा।",
-           "display_text": "New Registration पर click करें, Aadhaar और mobile number डालें",
+           "voice_script": "शाबाश! अब आपको एक लॉगिन कार्ड दिखाई दे रहा होगा। सबसे पहले दाईं तरफ जैसा कैप्चा लिखा है, उसे बिल्कुल वैसा ही भरें। इसके बाद दूसरे बॉक्स में अपना मोबाइल नंबर दर्ज करें।",
+           "display_text": "Login card पर captcha और mobile number डालें और 'वेरिफाई' पर क्लिक करें।",
            "sub_steps": None, "tip": "वही मोबाइल नंबर डालें जो आधार से जुड़ा हो"},
           {"title": "OTP डालें",
            "voice_script": "अच्छा! अब आपके मोबाइल पर 6 अंकों का एक नंबर आएगा, उसे OTP कहते हैं। वह नंबर वेबसाइट पर डालें और Submit करें। यह नंबर 10 मिनट तक काम करता है।",
@@ -178,7 +178,6 @@ def start_conversation(language: str = "en"):
     first_q = state.get_next_question()
     q_data = QUESTIONS[first_q]
 
-    quesion_text = translate_with_gemini(q_data["hi"], language) if language not in ["en", "hi"] else q_data[base_lang]
     return {
         "session_id": session_id,
         "question_id": first_q,
@@ -208,7 +207,7 @@ def submit_answer(req: AnswerRequest):
         }
     
     q_data = QUESTIONS[next_q]
-    lang = state.base_lang if hasattr(state, "base_lang") else ("hi" if state.language not in ["en", "hi"] else state.language)
+    lang = state.language
     answered = len(state.answers)
     total = len([q for q in ["state","age","gender","occupation","land","income",
               "women_situations","special_situations","caste","documents"]
@@ -223,7 +222,7 @@ def submit_answer(req: AnswerRequest):
         "question_id": next_q,
         "question": q_data[lang],
         "type": q_data["type"],
-        "options": q_data.get("options" if lang == "en" else "options_hi"),
+        "options": options,
         "progress": f"{answered}/{total}"
     }
 
