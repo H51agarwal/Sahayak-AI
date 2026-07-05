@@ -1,6 +1,6 @@
 import axios from "axios"
 
-const BASE_URL = "http://localhost:8000"
+const BASE_URL = "https://sahayak-ai-1-uv8g.onrender.com";
 
 export const startConversation = async (language = "en") => {
   const res = await axios.post(`${BASE_URL}/conversation/start?language=${language}`)
